@@ -15,3 +15,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+/.idea
+
+# Ignore public files
+public/system

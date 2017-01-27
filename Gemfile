@@ -17,8 +17,21 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
+# Admin Panel
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin_addons'
+gem 'devise', '~> 4.0.0.rc2'
+
+# Other
+gem 'friendly_id', '~> 5.1.0'
+gem 'kaminari', github: 'amatsuda/kaminari', branch: '0-17-stable'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'byebug', platform: :mri
