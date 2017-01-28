@@ -21,6 +21,8 @@ gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 
 # Admin Panel
 gem 'activeadmin', '~> 1.0.0.pre4'

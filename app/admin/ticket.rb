@@ -1,11 +1,10 @@
-ActiveAdmin.register Artist do
+ActiveAdmin.register Ticket do
   before_filter except: [:index, :new, :create, :batch_action] do
-    @category = Artist.find(params[:id])
+    @category = Ticket.find(params[:id])
   end
 
   menu priority: 2
-  permit_params :name, :description, :image, :vkontakte_link, :facebook_link,
-                :twitter_link, :instagram_link
+  permit_params :name, :description, :image, :price
 
   filter :name
 
@@ -15,18 +14,16 @@ ActiveAdmin.register Artist do
     column :name
     column (:description) { |description| raw(description.description) }
     image_column :image, style: :thumb
+    column :price
     actions
   end
 
   form do |f|
-    f.inputs 'Добавить Артиста' do
+    f.inputs 'Добавить Билет' do
       f.input :name
-      f.input :image, as: :file, hint: f.object.image? ? image_tag(f.object.image.url, width: 200) : ''
       f.input :description, as: :ckeditor
-      f.input :vkontakte_link
-      f.input :facebook_link
-      f.input :twitter_link
-      f.input :instagram_link
+      f.input :image, as: :file, hint: f.object.image? ? image_tag(f.object.image.url, width: 200) : ''
+      f.input :price
     end
     f.actions
   end
@@ -36,10 +33,7 @@ ActiveAdmin.register Artist do
       row :name
       row (:description) { |description| raw(description.description) }
       image_row :image, style: :thumb
-      row :vkontakte_link
-      row :facebook_link
-      row :twitter_link
-      row :instagram_link
+      row :price
     end
   end
 end
