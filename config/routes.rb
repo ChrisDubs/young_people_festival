@@ -7,8 +7,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  match '/about_us',     to: 'home#about_us',   via: 'get'
+  match '/about_us',     to: 'home#about_us',     via: 'get'
   match '/contact_us',   to: 'home#contact_us',   via: 'get'
   match '/cooperation',  to: 'home#cooperation',  via: 'get'
-  match '/place',        to: 'home#place',        via: 'get'
 end

@@ -10,7 +10,4 @@ class HomeController < ApplicationController
 
   def cooperation
   end
-
-  def place
-  end
 end

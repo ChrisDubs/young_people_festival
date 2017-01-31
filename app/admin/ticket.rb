@@ -35,5 +35,7 @@ ActiveAdmin.register Ticket do
       image_row :image, style: :thumb
       row :price
     end
+
+    active_admin_comments
   end
 end

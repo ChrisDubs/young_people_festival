@@ -1,11 +1,13 @@
 ActiveAdmin.register Artist do
   before_filter except: [:index, :new, :create, :batch_action] do
-    @category = Artist.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   menu priority: 2
-  permit_params :name, :description, :image, :vkontakte_link, :facebook_link,
-                :twitter_link, :instagram_link
+  permit_params :name, :description, :image,
+                :vkontakte_link, :facebook_link,
+                :twitter_link, :instagram_link,
+                artist_audios_attributes:  [:id, :audio, :_destroy]
 
   filter :name
 
@@ -27,6 +29,9 @@ ActiveAdmin.register Artist do
       f.input :facebook_link
       f.input :twitter_link
       f.input :instagram_link
+      f.has_many :artist_audios, heading: 'Музыка', allow_destroy: true do |i|
+        i.input :audio, as: :file, hint: i.object.persisted? ? audio_tag(i.object.audio.url, controls: true) : ''
+      end
     end
     f.actions
   end
@@ -40,6 +45,17 @@ ActiveAdmin.register Artist do
       row :facebook_link
       row :twitter_link
       row :instagram_link
+
+      if artist.artist_audios.any?
+        h3 'Музыка'
+        ul do
+          artist.artist_audios.each do |audio|
+            li audio.audio_file_name
+          end
+        end
+      end
     end
+
+    active_admin_comments
   end
 end
