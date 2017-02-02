@@ -15,7 +15,86 @@
  *= require jquery-ui/datepicker
  */
 
+@import "bootstrap";
+@import "font-awesome";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Footer Setting Bottom
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
 body {
-    background-image: url("YoungPeople3.jpg");
-    background-size: cover;
+  color: #ffffff;
+  height: 100%;
+  background-image: url("background-about-us.jpg");
+  background-size: cover;
+
+  .wrapper {
+    position: relative;
+    min-height: 100%;
+  }
+
+  .main-content {
+    padding-bottom: 120px;
+    background: rgba(128,128,128,0.3);
+  }
+
+  a {
+    color: #ffffff;
+
+    &:hover {
+      color: #ff4419;
+    }
+  }
+}
+
+// Header
+.header-wrapper {
+  height: 70px;
+  background: rgba(48,102,128,0.3);
+
+  // Navbar
+  .nav-wrapper {
+    background: gray;
+    .nav {
+        li {
+          a {
+            font-size: 14pt;
+          }
+        }
+    }
+  }
+}
+
+// Footer
+.footer-wrapper {
+  // Footer Setting Bottom
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+
+  
+  hr {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .social-networks {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    a { // Дублирование кода
+      color: #ffffff;
+      font-size: 22px;
+
+      &:hover {
+        color: #ff4419;
+      }
+    }
+  }
 }
