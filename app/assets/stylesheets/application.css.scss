@@ -30,7 +30,7 @@ html,
 body {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
-  background-image: url("background-about-us.jpg");
+  background-image: url("background-3.jpg");
   background-size: cover;
 
 
@@ -44,7 +44,7 @@ body {
       text-decoration: none;
 
       &:hover {
-        color: #ff2019;
+        color: #FF0103;
       }
     }
   }
@@ -72,18 +72,41 @@ body {
     top: 18px;
     right: 0;
 
+    // Navbar-toggler
     .navbar-toggler {
       position: absolute;
       right: 25px;
     }
-
-    @media screen and (max-width: 1080px) {
-      ul {
+    @media (min-width: 1080px) {
+      .navbar-toggler {
         display: none;
       }
     }
 
     #nav-content {
+      @media (max-width: 1080px) {
+        margin-right: 50px;
+        text-align: center;
+      }
+      @media (width: 320px) {
+        width: 320px;
+      }
+      @media (width: 360px) {
+        width: 360px;
+      }
+      @media (width: 375px) {
+        width: 375px;
+      }
+      @media (width: 412px) {
+        width: 412px;
+      }
+      @media (width: 414px) {
+        width: 414px;
+        margin-left: -153px;
+        background: rgba(0, 0, 0, 0.7);
+        margin-top: 52px;
+      }
+
       .nav {
         @media screen and (min-width: 1080px) {
           li {
@@ -98,7 +121,7 @@ body {
             }
 
             &:hover {
-              border-bottom: 2px solid #ff2019;
+              border-bottom: 2px solid #FF0103;
 
               a {
                 color: #ffffff;
