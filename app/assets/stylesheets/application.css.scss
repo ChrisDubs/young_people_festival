@@ -21,7 +21,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-// Footer Setting Bottom
+// Footer Setting Bottom №1
 * {
   margin: 0;
   padding: 0;
@@ -44,57 +44,158 @@ body {
       text-decoration: none;
 
       &:hover {
-        color: #ff4419;
+        color: #ff2019;
       }
     }
   }
 
   .main-content {
     padding-bottom: 120px;
-    background: rgba(96, 96, 96, 0.3);
   }
 }
 
 // Header
 .header-wrapper {
   height: 70px;
-  background: rgba(48,102,128,0.3);
+  background: rgba(0, 0, 0, 0.7);
+
+  // Logo
+  .logo {
+    position: absolute;
+    top: 18px;
+    width: 75px;
+  }
 
   // Navbar
   .nav-wrapper {
-    background: rgba(96, 96, 96, 0.3);
-    .nav {
-        li {
-          a {
-            text-transform: uppercase;
-            font-size: 12pt;
-            font-weight: bold;
+    position: absolute;
+    top: 18px;
+    right: 0;
+
+    .navbar-toggler {
+      position: absolute;
+      right: 25px;
+    }
+
+    @media screen and (max-width: 1080px) {
+      ul {
+        display: none;
+      }
+    }
+
+    #nav-content {
+      .nav {
+        @media screen and (min-width: 1080px) {
+          li {
+            margin-left: 8px;
+            margin-right: 8px;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+            &:last-child {
+              margin-right: 0px;
+            }
+
+            &:hover {
+              border-bottom: 2px solid #ff2019;
+
+              a {
+                color: #ffffff;
+              }
+            }
           }
         }
+
+        @media screen and (min-width: 1200px) {
+          li {
+            margin-left: 17px;
+            margin-right: 17px;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+            &:last-child {
+              margin-right: 0px;
+            }
+          }
+        }
+
+        li {
+          a {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            font-size: 10pt;
+          }
+        }
+      }
     }
   }
 }
 
 // Footer
 .footer-wrapper {
-  // Footer Setting Bottom
+  // Footer Setting Bottom №1
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 110px;
 
-  
   hr {
+    margin-bottom: 18px;
     background: rgba(255, 255, 255, 0.3);
   }
 
-  .social-networks {
-    padding-left: 5px;
-    padding-right: 5px;
+  .social-networks-wrapper {
+    height: 35px;
 
-    a {
-      font-size: 22px;
+    .social-networks {
+      padding-left: 5px;
+      padding-right: 5px;
+
+      a {
+        font-size: 22px;
+      }
+    }
+
+    // Social Networks Icons
+    .Vkontakte, .Twitter, .Instagram, .Facebook {
+      display: block;
+      width: 29px;
+      height: 29px;
+    }
+
+    .Vkontakte {
+      background: url(vk_normal.png);
+
+      &:hover {
+        background: url(vk_hover.png);
+      }
+    }
+
+    .Twitter {
+      background: url(twitter_normal.png);
+
+      &:hover {
+        background: url(twitter_hover.png);
+      }
+    }
+
+    .Instagram {
+      background: url(instagram_normal.png);
+
+      &:hover {
+        background: url(instagram_hover.png);
+      }
+    }
+
+    .Facebook {
+      background: url(facebook_normal.png);
+
+      &:hover {
+        background: url(facebook_hover.png);
+      }
     }
   }
 }

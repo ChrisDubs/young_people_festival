@@ -6,33 +6,41 @@
     </div>
 
     <!-- Header Logo -->
-    <div class="col-md-2 logo-wrapper">
-        <%= link_to (image_tag 'logotype.png', alt: 'Young People logo', class: 'img-fluid'), root_path %>
+    <div class=" col-xs-4 col-md-2 logo-wrapper">
+        <%= link_to (image_tag 'logo-1-1.png', alt: 'Young People logo', class: 'logo'), root_path %>
     </div>
 
     <!-- Indent -->
     <div class="col-md-3">
     </div>
 
-    <!-- Header Content -->
-    <div class="col-md-6 nav-wrapper">
+    <!-- Header Navigation -->
+    <div class="col-xs-8 col-md-6 nav-wrapper">
+
+      <!-- Toggle Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="collapse navbar-toggleable-xs" id="nav-content">
         <ul class="nav navbar-nav">
-          <li class="col-xs-12 col-md-4 col-lg-2">
-            <%= link_to 'О нас', about_us_path %>
+          <li class="nav-item">
+            <%= link_to 'О нас', about_us_path, class: 'nav-link' %>
           </li>
-          <li class="col-xs-12 col-md-4 col-lg-2">
-            <%= link_to 'Артисты', artists_path %>
+          <li class="nav-item">
+            <%= link_to 'Артисты', artists_path, class: 'nav-link' %>
           </li>
-          <li class="col-xs-12 col-md-4 col-lg-2">
-            <%= link_to 'Билеты', tickets_path %>
+          <li class="nav-item">
+            <%= link_to 'Билеты', tickets_path, class: 'nav-link' %>
           </li>
-          <li class="col-xs-12 col-md-4 col-lg-2">
-            <%= link_to 'Контакты', contact_us_path %>
+          <li class="nav-item">
+            <%= link_to 'Контакты', contact_us_path, class: 'nav-link' %>
           </li>
-          <li class="col-xs-12 col-md-4 col-lg-2">
-            <%= link_to 'Сотрудничество', cooperation_path %>
+          <li class="nav-item">
+            <%= link_to 'Сотрудничество', cooperation_path, class: 'nav-link' %>
           </li>
         </ul>
+      </div>
     </div>
   </div>
 </div>
