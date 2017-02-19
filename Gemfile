@@ -21,7 +21,7 @@ gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 
 # Admin Panel
@@ -34,6 +34,7 @@ gem 'devise', '~> 4.0.0.rc2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'kaminari', github: 'amatsuda/kaminari', branch: '0-17-stable'
 gem 'ckeditor'
+gem 'active_link_to', '~> 1.0', '>= 1.0.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>YoungPeopleFestival</title>
+
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
 
@@ -10,18 +11,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="MobileOptimized" content="320"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
     <div class="wrapper">
       <%= render partial: 'shared/header' %>
-      <div class="main-content">
-        <div class="container text-xs-center" >
+      <div class="content">
+        <div class="container text-center content-container" >
           <%= yield %>
         </div>
       </div>
+      <%= render partial: 'artists/artist_modal' %>
       <%= render partial: 'shared/footer' %>
     </div>
   </body>

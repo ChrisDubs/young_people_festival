@@ -1,2 +1,34 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="home-wrapper">
+  <div class="container">
+    <div class="row">
+      <!-- Indent -->
+      <div class="col-lg-2">
+      </div>
+
+      <!-- Logo -->
+      <div class="col-12 col-md-12 col-lg-4">
+        <%= link_to (image_tag 'logo-1-w.png', alt: 'Young People logo', class: 'home-logo'), root_path %>
+      </div>
+
+      <!-- Content -->
+      <div class="col-12 col-md-12 col-lg-4 home-content">
+        <h3 class="home-header">Young People Festival</h3>
+        <p class="home-text">Самый яркий фестиваль танцевальной
+          музыки, который вы когда-либо видели в
+          Украине. Тонны ярких эмоций и отличное
+          настроение вам гарантированы. Бери с
+          собой друзей и отрывайся. Ждём тебя 30 и
+          31 августа.</p>
+      </div>
+
+      <!-- Indent -->
+      <div class="col-lg-2">
+      </div>
+
+      <!-- Button -->
+      <div class="col-12">
+        <%= link_to 'Узнать больше', about_us_path, class: 'btn my-button-home', role: 'button' %>
+      </div>
+    </div>
+  </div>
+</div>

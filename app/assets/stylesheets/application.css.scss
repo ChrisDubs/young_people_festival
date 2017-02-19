@@ -21,43 +21,46 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-// Footer Setting Bottom №1
 * {
   margin: 0;
   padding: 0;
 }
+
 html,
 body {
   font-family: 'Open Sans', sans-serif;
-  height: 100%;
-  background-image: url("background-3.jpg");
+  background-image: url("background-1.jpg");
   background-size: cover;
-
+  height: 100%;
 
   .wrapper {
     color: #ffffff;
     position: relative;
     min-height: 100%;
 
+    /*.content {
+      padding-bottom: 105px;
+    }*/
+
+    .footer-wrapper {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 105px;
+    }
+
     a {
       color: #ffffff;
       text-decoration: none;
-
-      &:hover {
-        color: #FF0103;
-      }
     }
-  }
-
-  .main-content {
-    padding-bottom: 120px;
   }
 }
 
 // Header
 .header-wrapper {
   height: 70px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
 
   // Logo
   .logo {
@@ -69,102 +72,168 @@ body {
   // Navbar
   .nav-wrapper {
     position: absolute;
-    top: 18px;
+    top: 10px;
     right: 0;
+    height: 52px;
+    z-index: 1;
 
-    // Navbar-toggler
     .navbar-toggler {
       position: absolute;
-      right: 25px;
-    }
-    @media (min-width: 1080px) {
-      .navbar-toggler {
-        display: none;
-      }
+      top: 12px;
+      right: 6px;
+      background: none;
+      box-shadow: none;
     }
 
     #nav-content {
-      @media (max-width: 1080px) {
-        margin-right: 50px;
-        text-align: center;
-      }
-      @media (width: 320px) {
-        width: 320px;
-      }
-      @media (width: 360px) {
-        width: 360px;
-      }
-      @media (width: 375px) {
-        width: 375px;
-      }
-      @media (width: 412px) {
-        width: 412px;
-      }
-      @media (width: 414px) {
-        width: 414px;
-        margin-left: -153px;
-        background: rgba(0, 0, 0, 0.7);
-        margin-top: 52px;
-      }
-
       .nav {
-        @media screen and (min-width: 1080px) {
-          li {
-            margin-left: 8px;
-            margin-right: 8px;
-
-            &:first-child {
-              margin-left: 0px;
-            }
-            &:last-child {
-              margin-right: 0px;
-            }
-
-            &:hover {
-              border-bottom: 2px solid #FF0103;
-
-              a {
-                color: #ffffff;
-              }
-            }
-          }
-        }
-
-        @media screen and (min-width: 1200px) {
-          li {
-            margin-left: 17px;
-            margin-right: 17px;
-
-            &:first-child {
-              margin-left: 0px;
-            }
-            &:last-child {
-              margin-right: 0px;
-            }
-          }
-        }
-
         li {
+          &:hover {
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+        @media screen and (min-width: 992px) {
+          li {
+            margin-left: 4px;
+            margin-right: 4px;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+            &:last-child {
+              margin-right: 0px;
+            }
+          }
+          @media screen and (min-width: 1200px) {
+            li {
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+          }
+
+          .active {
+            border-bottom: 2px solid #FF0103;
+            color: #ffffff !important;
+          }
+
           a {
             color: rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
             font-size: 10pt;
           }
         }
+
+        @media screen and (min-width: 1200px) {
+          li {
+            &:first-child {
+              margin-left: 0px;
+            }
+            &:last-child {
+              margin-right: 0px;
+            }
+          }
+        }
+        @media screen and (max-width: 991px) {
+          margin-top: 52px;
+          background: rgba(0, 0, 0, 0.8);
+          text-align: center;
+        }
       }
+    }
+  }
+}
+
+// Home Content
+.content {
+  position: absolute;
+  top: 50%;
+  margin-top: -220px;/* half of #content height*/
+  left: 0;
+  width: 100%;
+
+  .content-container {
+    margin-left: auto;
+    margin-right: auto;
+    height: 440px;
+
+    .home-wrapper {
+      padding-top: 5%;
+
+      .home-content {
+        padding-top: 3%;
+
+        .home-header {
+          text-transform: uppercase;
+          font-weight: bold;
+          white-space: nowrap;
+        }
+      }
+
+      .home-logo {
+        width: 300px;
+      }
+
+      .my-button-home {
+        border: 1px solid #ffffff;
+        text-transform: uppercase;
+        background: none;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: bold;
+
+        &:hover {
+          background: #FF0103;
+          border: 1px solid #FF0103;
+        }
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      .home-wrapper {
+        padding-top: 0%;
+
+        .home-content {
+
+          .home-header {
+            font-size: 24px;
+          }
+
+          .home-text {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .home-wrapper {
+
+        .home-content {
+
+          .home-header {
+            font-size: 22px;
+          }
+
+          .home-text {
+            font-size: 12px;
+          }
+        }
+
+        .home-logo {
+          width: 240px;
+        }
+      }
+    }
+
+    .about-us-wrapper {
     }
   }
 }
 
 // Footer
 .footer-wrapper {
-  // Footer Setting Bottom №1
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 110px;
-
   hr {
     margin-bottom: 18px;
     background: rgba(255, 255, 255, 0.3);
@@ -174,12 +243,8 @@ body {
     height: 35px;
 
     .social-networks {
-      padding-left: 5px;
-      padding-right: 5px;
-
-      a {
-        font-size: 22px;
-      }
+      padding-left: 3px;
+      padding-right: 3px;
     }
 
     // Social Networks Icons
