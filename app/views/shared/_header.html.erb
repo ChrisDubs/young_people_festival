@@ -1,4 +1,4 @@
-<div class="header-wrapper">
+<div id="header-wrapper">
   <div class="container">
     <div class="row">
 
@@ -16,32 +16,32 @@
       </div>
 
       <!-- Header Navigation -->
-      <div class="col col-md-6 nav-wrapper">
-        <nav class="navbar navbar-toggleable-md text-nowrap">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </button>
+      <div class="col col-md-6 nav-wrapper navbar navbar-toggleable-md">
 
-          <div class="collapse navbar-collapse" id="nav-content">
-            <ul class="nav navbar-nav mr-auto">
-              <li class="nav-item">
-                <%= active_link_to 'О нас', about_us_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= active_link_to 'Артисты', artists_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= active_link_to 'Билеты', tickets_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= active_link_to 'Контакты', contact_us_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= active_link_to 'Сотрудничество', cooperation_path, class: 'nav-link' %>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <span onclick="openNav()" onclick="closeNav()" class="burger-button hidden-lg-up">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </span>
+
+        <div id="mySidenav" class="sidenav text-nowrap">
+          <a href="javascript:void(0)" class="closebtn hidden-lg-up" onclick="closeNav()">&times;</a>
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= active_link_to 'О нас', about_us_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= active_link_to 'Артисты', artists_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= active_link_to 'Билеты', tickets_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= active_link_to 'Контакты', contact_us_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= active_link_to 'Сотрудничество', cooperations_path, class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

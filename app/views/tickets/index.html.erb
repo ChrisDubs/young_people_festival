@@ -1,25 +1,23 @@
-<div class="tickets-wrapper">
-  <div class="container">
-    <div class="row">
+<div class="ticket-wrapper">
+  <div class="row">
 
-      <!-- Indent -->
-      <div class="col-lg-2"></div>
+    <!-- Indent -->
+    <div class="col-lg-3"></div>
 
-      <!-- Content -->
-      <div class="col-12 col-md-12 col-lg-8">
-        <div class="row">
-          <% @tickets.each do |ticket| %>
-              <div class="col-4 col-md-6 col-lg-6">
-                <%= image_tag ticket.image.url, class: 'img-fluid', style: 'height: 400px;' %>
-                <%= ticket.price %>
-              </div>
-          <% end %>
-        </div>
+    <!-- Content -->
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="row">
+        <% @tickets.each_with_index do |ticket, i| %>
+            <div class="col-12 col-md-6 col-lg-6"  data-toggle="modal" data-target="#exampleModalLong<%= i %>">
+              <%= image_tag ticket.image.url, class: 'img-fluid' %>
+              <%= render partial: 'tickets/ticket_modal', locals: { ticket: ticket, i: i } %>
+            </div>
+        <% end %>
       </div>
-
-      <!-- Indent -->
-      <div class="col-lg-2"></div>
-
     </div>
+
+    <!-- Indent -->
+    <div class="col-lg-3"></div>
+
   </div>
 </div>

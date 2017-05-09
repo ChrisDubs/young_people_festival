@@ -6,5 +6,5 @@ class Ticket < ApplicationRecord
   # Validates
   validates :name,        presence: true, length: { maximum: 10 }
   validates :image,       presence: true
-  validates :price,       presence: true, length: { maximum: 3 }
+  validates :price,       presence: true, numericality: { greater_then: 0, less_then: 1000 }
 end

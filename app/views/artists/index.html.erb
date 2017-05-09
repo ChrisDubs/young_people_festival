@@ -1,25 +1,24 @@
 <div class="artist-wrapper">
-  <div class="container">
-    <div class="row">
+  <div class="row">
 
-      <!-- Indent -->
-      <div class="col-lg-2"></div>
+    <!-- Indent -->
+    <div class="col-md-4"></div>
 
-      <!-- Content -->
-      <div class="col-12 col-md-12 col-lg-8" data-toggle="modal" data-target="#exampleModalLong">
-        <div class="row">
-          <% @artists.each do |artist| %>
-              <div class="col-4 col-md-3 col-lg-3">
-                <%= image_tag artist.image.url, class: 'img-fluid' %>
+    <!-- Content -->
+    <div class="col-12 col-md-4">
+      <div class="row">
+        <% @artists.each_with_index do |artist, i| %>
+              <div class="col-4 col-md-4 artist"  data-toggle="modal" data-target="#exampleModalLong<%= i %>">
+                <%= image_tag artist.image.url, class: 'img-fluid artist-image' %>
                 <%= artist.name %>
+                <%= render partial: 'artists/artist_modal', locals: { artist: artist, i: i } %>
               </div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
-
-      <!-- Indent -->
-      <div class="col-lg-2"></div>
-
     </div>
+
+    <!-- Indent -->
+    <div class="col-md-4"></div>
+
   </div>
 </div>

@@ -29,27 +29,20 @@
 html,
 body {
   font-family: 'Open Sans', sans-serif;
-  background-image: url("background-1.jpg");
+  background-image: image-url("background-1.jpg");
+  background-attachment: fixed;
   background-size: cover;
-  height: 100%;
+
+  .back-artists {
+    background-image: image-url("background-2.jpg");
+  }
+
+  .back-tickets {
+    background-image: image-url("background-3.jpg");
+  }
 
   .wrapper {
     color: #ffffff;
-    position: relative;
-    min-height: 100%;
-
-    /*.content {
-      padding-bottom: 105px;
-    }*/
-
-    .footer-wrapper {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 105px;
-    }
-
     a {
       color: #ffffff;
       text-decoration: none;
@@ -58,7 +51,7 @@ body {
 }
 
 // Header
-.header-wrapper {
+#header-wrapper {
   height: 70px;
   background: rgba(0, 0, 0, 0.8);
 
@@ -72,20 +65,21 @@ body {
   // Navbar
   .nav-wrapper {
     position: absolute;
-    top: 10px;
+    top: 9px;
     right: 0;
     height: 52px;
     z-index: 1;
 
-    .navbar-toggler {
+    .burger-button {
       position: absolute;
-      top: 12px;
-      right: 6px;
+      top: 15px;
+      right: 37px;
       background: none;
       box-shadow: none;
     }
 
-    #nav-content {
+    #mySidenav {
+      padding-top: 9px;
       .nav {
         li {
           &:hover {
@@ -96,20 +90,17 @@ body {
         }
         @media screen and (min-width: 992px) {
           li {
-            margin-left: 4px;
-            margin-right: 4px;
-
             &:first-child {
               margin-left: 0px;
             }
-            &:last-child {
+            &:nth-child(5n) {
               margin-right: 0px;
             }
           }
           @media screen and (min-width: 1200px) {
             li {
-              margin-left: 10px;
-              margin-right: 10px;
+              margin-left: 6px;
+              margin-right: 6px;
             }
           }
 
@@ -124,21 +115,63 @@ body {
             font-size: 10pt;
           }
         }
+      }
+    }
 
-        @media screen and (min-width: 1200px) {
-          li {
-            &:first-child {
-              margin-left: 0px;
-            }
-            &:last-child {
-              margin-right: 0px;
+    @media screen and (max-width: 991px) {
+      /* The side navigation menu */
+      .sidenav {
+        text-align: center;
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 1); /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+        /* The navigation menu links */
+        a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+
+          /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+          @media screen and (max-width: 991px) {
+            padding-top: 15px;
+            font-size: 18px;
+
+            @media screen and (max-width: 450px) {
+              padding-top: 13px;
+              font-size: 14px;
             }
           }
         }
+
+        /* Position and style the close button (top right corner) */
         @media screen and (max-width: 991px) {
+          .closebtn {
+            position: absolute;
+            top: -2px;
+            right: 51px;
+            font-size: 30px;
+            margin-left: 50px;
+
+            @media screen and (max-width: 450px) {
+              top: 0px;
+              right: 27px;
+            }
+          }
+        }
+
+        .nav {
           margin-top: 52px;
-          background: rgba(0, 0, 0, 0.8);
-          text-align: center;
         }
       }
     }
@@ -147,35 +180,115 @@ body {
 
 // Home Content
 .content {
-  position: absolute;
-  top: 50%;
-  margin-top: -220px;/* half of #content height*/
-  left: 0;
+  // Vertical Alignment <--
+  display: table;
+  table-layout: fixed;
   width: 100%;
+  overflow: hidden;
 
-  .content-container {
-    margin-left: auto;
-    margin-right: auto;
-    height: 440px;
+  .container {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  // Vertical Alignment -->
 
-    .home-wrapper {
-      padding-top: 5%;
+  .content-logo {
+    width: 300px;
+  }
 
-      .home-content {
-        padding-top: 3%;
+  .home-header, .contact-us-header {
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+  }
 
-        .home-header {
-          text-transform: uppercase;
-          font-weight: bold;
-          white-space: nowrap;
+  .home-wrapper {
+    .home-content {
+      @media screen and (max-width: 576px) {
+        text-align: center;
+      }
+      padding-top: 3%;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .button-home {
+      border: 1px solid #ffffff;
+      text-transform: uppercase;
+      background: none;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: bold;
+
+      &:hover {
+        background: #FF0103;
+        border: 1px solid #FF0103;
+      }
+    }
+  }
+
+  .contact-us-wrapper {
+    .content-logo {
+      padding-top: 1%;
+    }
+
+    .contact-us-content {
+      p {
+        margin: 0;
+      }
+
+      .contact-us-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .position {
+        font-weight: bold;
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+
+      .position-info {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .cooperation-wrapper {
+    .cooperation-logo {
+      width: 150px;
+      float:left; /* Выравнивание по левому краю */
+      margin: 20px 10px 0 0; /* Отступы вокруг картинки */
+    }
+
+    .cooperation-content {
+      line-height: 18px;
+      font-size: 14px;
+    }
+
+    .cooperation-form {
+      .coop-form-field {
+        @media screen and (min-width: 768px) {
+
         }
+        background: rgba(0, 0, 0, 0.8);
+        border: none;
+        border-radius: 2px;
+        margin-bottom: 4px;
+        color: #fff;
+        line-height: 18px;
+        font-size: 14px;
+        width: 100%;
       }
-
-      .home-logo {
-        width: 300px;
+      .coop-form-field-area {
+        min-height: 95px;
+        max-height: 150px;
       }
-
-      .my-button-home {
+      .button-cooperation {
         border: 1px solid #ffffff;
         text-transform: uppercase;
         background: none;
@@ -189,53 +302,34 @@ body {
         }
       }
     }
+  }
 
-    @media screen and (max-width: 991px) {
-      .home-wrapper {
-        padding-top: 0%;
+  @media screen and (min-width: 991px) {
+    .contact-us-content, .cooperation-content {
+      text-align: left;
+    }
+  }
 
-        .home-content {
+  .artist {
+    color: #818181;
+    padding-top: 15px;
+    font-size: 14px;
 
-          .home-header {
-            font-size: 24px;
-          }
-
-          .home-text {
-            font-size: 14px;
-          }
-        }
-      }
+    .artist-image {
+      width: 190px;
+      border-radius: 100px;
     }
 
-    @media screen and (max-width: 768px) {
-      .home-wrapper {
-
-        .home-content {
-
-          .home-header {
-            font-size: 22px;
-          }
-
-          .home-text {
-            font-size: 12px;
-          }
-        }
-
-        .home-logo {
-          width: 240px;
-        }
-      }
-    }
-
-    .about-us-wrapper {
+    &:hover {
+      color: #ffffff;
     }
   }
 }
 
+
 // Footer
-.footer-wrapper {
+#footer-wrapper {
   hr {
-    margin-bottom: 18px;
     background: rgba(255, 255, 255, 0.3);
   }
 
@@ -243,46 +337,14 @@ body {
     height: 35px;
 
     .social-networks {
-      padding-left: 3px;
-      padding-right: 3px;
-    }
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 22px;
 
-    // Social Networks Icons
-    .Vkontakte, .Twitter, .Instagram, .Facebook {
-      display: block;
-      width: 29px;
-      height: 29px;
-    }
-
-    .Vkontakte {
-      background: url(vk_normal.png);
-
-      &:hover {
-        background: url(vk_hover.png);
-      }
-    }
-
-    .Twitter {
-      background: url(twitter_normal.png);
-
-      &:hover {
-        background: url(twitter_hover.png);
-      }
-    }
-
-    .Instagram {
-      background: url(instagram_normal.png);
-
-      &:hover {
-        background: url(instagram_hover.png);
-      }
-    }
-
-    .Facebook {
-      background: url(facebook_normal.png);
-
-      &:hover {
-        background: url(facebook_hover.png);
+      a {
+        &:hover {
+          color: #FF0103;
+        }
       }
     }
   }

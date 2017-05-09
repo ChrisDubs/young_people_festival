@@ -1,0 +1,11 @@
+class CreateCooperations < ActiveRecord::Migration[5.0]
+  def change
+    create_table :cooperations do |t|
+      t.string :name
+      t.string :email
+      t.string :text
+
+      t.timestamps
+    end
+  end
+end

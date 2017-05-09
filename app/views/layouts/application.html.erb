@@ -8,24 +8,23 @@
 
     <%= render partial: 'shared/shim' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
-  <body>
-    <div class="wrapper">
-      <%= render partial: 'shared/header' %>
-      <div class="content">
-        <div class="container text-center content-container" >
-          <%= yield %>
-        </div>
+  <body class="<%= @background.present? ? @background : nil %>">
+  <div class="wrapper">
+    <%= render partial: 'shared/header' %>
+    <div class="content" id="content">
+      <div class="container text-center">
+        <%= yield %>
       </div>
-      <%= render partial: 'artists/artist_modal' %>
-      <%= render partial: 'shared/footer' %>
     </div>
+    <%= render partial: 'shared/footer' %>
+  </div>
   </body>
 </html>
