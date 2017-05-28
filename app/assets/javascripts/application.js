@@ -16,6 +16,16 @@
 //= require ckeditor/init
 //= require_tree .
 
+/* Open the sidenav */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
 /* Content Vertical Alignment(Screen-Height) */
 $(document).ready(function() {
     var height = $('#header-wrapper').height() + $('#footer-wrapper').height() + 16;
@@ -26,13 +36,3 @@ $(window).resize(function() {
     var height = $('#header-wrapper').height() + $('#footer-wrapper').height() + 16;
     $('#content').css('height', window.innerHeight - height + 'px');
 });
-
-/* Open the sidenav */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-}
-
-/* Close/hide the sidenav */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
