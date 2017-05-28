@@ -17,14 +17,16 @@
   </head>
 
   <body class="<%= @background.present? ? @background : nil %>">
-  <div class="wrapper">
-    <%= render partial: 'shared/header' %>
-    <div class="content" id="content">
-      <div class="container text-center">
-        <%= yield %>
+    <div class="wrapper">
+      <%= render partial: 'shared/header' %>
+
+      <div class="content-wrapper" id="content">
+        <div class="container text-center">
+          <%= yield %>
+        </div>
       </div>
+      
+      <%= render partial: 'shared/footer' %>
     </div>
-    <%= render partial: 'shared/footer' %>
-  </div>
   </body>
 </html>

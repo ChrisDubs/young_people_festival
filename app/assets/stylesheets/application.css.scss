@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require jquery-ui/datepicker
  */
@@ -18,7 +17,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
-// Fonts
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
@@ -29,40 +28,48 @@
 html,
 body {
   font-family: 'Open Sans', sans-serif;
-  background-image: image-url("background-1.jpg");
+  background-image: image-url("background-main.jpg");
   background-attachment: fixed;
   background-size: cover;
 
   .back-artists {
-    background-image: image-url("background-2.jpg");
+    background-image: image-url("background-artists.jpg");
   }
 
   .back-tickets {
-    background-image: image-url("background-3.jpg");
+    background-image: image-url("background-tickets.jpg");
+  }
+
+  .back-cooperation {
+    background-image: image-url('background-coop.jpg');
+  }
+
+  .back-contact-us {
+    background-image: image-url('background-contact-us.jpg');
   }
 
   .wrapper {
-    color: #ffffff;
+    color: #ffffff !important;
     a {
       color: #ffffff;
-      text-decoration: none;
+      text-decoration: none !important;
     }
   }
 }
 
-// Header
+/* Header */
 #header-wrapper {
   height: 70px;
   background: rgba(0, 0, 0, 0.8);
 
-  // Logo
+  /* Logo */
   .logo {
     position: absolute;
     top: 18px;
     width: 75px;
   }
 
-  // Navbar
+  /* Navbar */
   .nav-wrapper {
     position: absolute;
     top: 9px;
@@ -79,7 +86,6 @@ body {
     }
 
     #mySidenav {
-      padding-top: 9px;
       .nav {
         li {
           &:hover {
@@ -178,9 +184,9 @@ body {
   }
 }
 
-// Home Content
-.content {
-  // Vertical Alignment <--
+/* Content */
+.content-wrapper {
+  /* Vertical Alignment <-- */
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -193,7 +199,7 @@ body {
     margin: 0 auto;
     text-align: center;
   }
-  // Vertical Alignment -->
+  /* Vertical Alignment --> */
 
   .content-logo {
     width: 300px;
@@ -289,14 +295,15 @@ body {
         max-height: 150px;
       }
       .button-cooperation {
+        color: #ffffff;
         border: 1px solid #ffffff;
         text-transform: uppercase;
         background: none;
         border-radius: 20px;
         font-size: 10px;
-        font-weight: bold;
 
         &:hover {
+          cursor: pointer;
           background: #FF0103;
           border: 1px solid #FF0103;
         }
@@ -327,7 +334,7 @@ body {
 }
 
 
-// Footer
+/* Footer */
 #footer-wrapper {
   hr {
     background: rgba(255, 255, 255, 0.3);

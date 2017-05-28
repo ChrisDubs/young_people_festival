@@ -16,7 +16,12 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/.idea
-
-# Ignore public files
-public/system
+# Ignoring other unnecessary files.
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
