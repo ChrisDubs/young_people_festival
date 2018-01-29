@@ -8,7 +8,7 @@
     <div class="col-12 col-md-4">
       <div class="row">
         <% @artists.each_with_index do |artist, i| %>
-              <div class="col-4 col-md-4 artist"  data-toggle="modal" data-target="#exampleModalLong<%= i %>">
+              <div class="col-4 col-sm-2 col-md-4 artist"  data-toggle="modal" data-target="#exampleModalLong<%= i %>">
                 <%= image_tag artist.image.url, class: 'img-fluid artist-image' %>
                 <%= artist.name %>
                 <%= render partial: 'artists/artist_modal', locals: { artist: artist, i: i } %>

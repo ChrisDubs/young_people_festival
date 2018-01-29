@@ -326,6 +326,11 @@ body {
       width: 190px;
       border-radius: 100px;
     }
+    .artist-modal-image {
+      width: 60px;
+      border-radius: 100px;
+      float: left;
+    }
 
     &:hover {
       color: #ffffff;
@@ -339,20 +344,58 @@ body {
   hr {
     background: rgba(255, 255, 255, 0.3);
   }
+}
 
-  .social-networks-wrapper {
-    height: 35px;
+.social-networks-wrapper {
+  height: 35px;
 
-    .social-networks {
-      padding-left: 5px;
-      padding-right: 5px;
-      font-size: 22px;
+  .social-networks {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 22px;
 
-      a {
-        &:hover {
-          color: #FF0103;
-        }
+    a {
+      &:hover {
+        color: #FF0103;
       }
     }
+  }
+}
+
+.modal {
+  top: calc(50% - 270px) !important;
+  color: #ffffff;
+
+  .modal-header {
+    border: none;
+  }
+
+  .modal-content {
+    background: #999;
+    border-radius: 0px;
+  }
+
+  .back-tiesto {
+    background-image: image-url("tiesto-modal.jpg");
+  }
+
+  .back-hardwell {
+    background-image: image-url("hardwell-modal.jpg");
+  }
+
+  .back-deadmau5 {
+    background-image: image-url('deadmau5-modal.jpg');
+  }
+
+  .back-dash-berlin {
+    background-image: image-url('dash-berlin-modal.jpg');
+  }
+
+  .back-timmy-trumpet {
+    background-image: image-url('timmy-trumpet-modal.jpg');
+  }
+
+  .back-afrojack {
+    background-image: image-url('afrojack-modal.jpg');
   }
 }

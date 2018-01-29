@@ -1,19 +1,39 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong<%= i %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content <%= @bgmodal.present? ? @bgmodal : nil %>">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <div>
+          <%= image_tag artist.image.url, class: 'img-fluid artist-modal-image' %>
+        </div>
+        <div>
+          <h6><%= artist.name %></h6>
+          15 лет<br>
+          Киев, Украина<br>
+        </div>
+        <div class="social-networks-wrapper">
+          <ul class="list-inline">
+            <li class="list-inline-item social-networks">
+              <%= link_to '', 'https://vk.com/', class: 'fa fa-vk', target: '_blank'  %>
+            </li>
+            <li class="list-inline-item social-networks">
+              <%= link_to '', 'https://twitter.com/', class: 'fa fa-twitter', target: '_blank'  %>
+            </li>
+            <li class="list-inline-item social-networks">
+              <%= link_to '', 'https://www.instagram.com/', class: 'fa fa-instagram', target: '_blank'  %>
+            </li>
+            <li class="list-inline-item social-networks">
+              <%= link_to '', 'https://uk-ua.facebook.com/', class: 'fa fa-facebook-square', target: '_blank'  %>
+            </li>
+          </ul>          
+        </div>        
       </div>
       <div class="modal-body">
-        <%= artist.name %>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <p>Лучшие композиции артиста</p>
+        <p><%= artist.artist_audios.first %></p>
       </div>
     </div>
   </div>
